@@ -16,8 +16,8 @@ export class PostsService {
 
   constructor(private http: HttpClient) {}
 
-  createAndStorePost(title: string, content: string) {
-    const postData: Post = { title: title, content: content };
+  createAndStorePost(team: string, name: string, content: string) {
+    const postData: Post = { team: team, name: name, content: content };
     this.http
       .post<{ name: string }>(
         'https://my-api-project-ed058.firebaseio.com/posts.json',

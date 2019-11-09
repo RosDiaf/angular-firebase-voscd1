@@ -1,5 +1,6 @@
 export interface Post {
-  title: string;
+  team: string;
+  name: string;
   content: string;
   id?: string;
 }
