@@ -9,6 +9,7 @@ import { map, catchError, tap } from 'rxjs/operators';
 import { Subject, throwError } from 'rxjs';
 
 import { Post } from '../Models/post.model';
+import { constants } from './constants'
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {
@@ -20,7 +21,7 @@ export class PostsService {
     const postData: Post = { team: team, name: name, content: content };
     this.http
       .post<{ name: string }>(
-        'https://my-api-project-ed058.firebaseio.com/posts.json',
+        constants.FIREBASE_URL,
         postData,
         {
           observe: 'response'
@@ -42,7 +43,7 @@ export class PostsService {
     searchParams = searchParams.append('custom', 'key');
     return this.http
       .get<{ [key: string]: Post }>(
-        'https://my-api-project-ed058.firebaseio.com/posts.json',
+        constants.FIREBASE_URL,
         {
           headers: new HttpHeaders({ 'Custom-Header': 'Hello' }),
           params: searchParams,
@@ -68,7 +69,7 @@ export class PostsService {
 
   deletePosts() {
     return this.http
-      .delete('https://my-api-project-ed058.firebaseio.com/posts.json', {
+      .delete(constants.FIREBASE_URL, {
         observe: 'events',
         responseType: 'text'
       })

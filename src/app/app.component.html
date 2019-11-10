@@ -9,13 +9,19 @@
       <form (ngSubmit)="onCreatePost(playerForm.value)" [formGroup]="playerForm" name="playerForm">
         <div class="form-group">
           <label for="team">Team</label>
-          <input
+          <select
             formControlName="team"
             type="text"
             class="form-control"
             id="team"
             [ngClass]="{ 'is-invalid': submitted && playerForm.team.errors }"
-          />
+          >
+            <option
+              [ngStyle]="{'background-image': 'url(' + constants.TEAM_URL + item.logo + ')'}"
+              value={{item.name}} *ngFor="let item of constants.TEAM; let i = index">
+              {{ item.name }}
+            </option>
+          </select>
           <div *ngIf="(!playerForm.controls['team'].valid && playerForm.controls['team'].touched)" class="error">Enter valid city</div>
         </div>
         <div class="form-group">
@@ -42,51 +48,6 @@
           class="btn btn-primary"
           type="submit"
           [disabled]="!playerForm.valid"
-        >
-          Send Post
-        </button>
-      </form>
-
-
-
-      <hr />
-      <form #postForm="ngForm" (ngSubmit)="onCreatePost(postForm.value)">
-        <div class="form-group">
-          <label for="team">Team</label>
-          <input
-            type="text"
-            class="form-control"
-            id="team"
-            required
-            ngModel
-            name="team"
-          />
-        </div>
-        <div class="form-group">
-          <label for="name">Player Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              required
-              ngModel
-              name="name"
-            />
-        </div>
-        <div class="form-group">
-          <label for="content">Content</label>
-          <textarea
-            class="form-control"
-            id="content"
-            required
-            ngModel
-            name="content"
-          ></textarea>
-        </div>
-        <button
-          class="btn btn-primary"
-          type="submit"
-          [disabled]="!postForm.valid"
         >
           Send Post
         </button>

@@ -9,6 +9,8 @@ import { Subscription } from 'rxjs';
 import { Post } from './Models/post.model';
 import { PostsService } from './API/posts.service';
 
+import { constants } from './API/constants'
+
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -17,6 +19,7 @@ import { PostsService } from './API/posts.service';
 export class AppComponent implements OnInit, OnDestroy {
   name = 'Angular';
 
+  constants: Object = constants;
   playerForm: FormGroup;
   loadedPosts: Post[] = [];
   isFetching = false;
