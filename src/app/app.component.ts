@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 import { HttpClient } from '@angular/common/http';
@@ -16,12 +17,17 @@ import { PostsService } from './API/posts.service';
 export class AppComponent implements OnInit, OnDestroy {
   name = 'Angular';
 
+  playerForm: FormGroup;
   loadedPosts: Post[] = [];
   isFetching = false;
   error = null;
   private errorSub: Subscription;
 
-  constructor(private http: HttpClient, private postsService: PostsService) {}
+  constructor(private http: HttpClient,
+              private postsService: PostsService,
+              private formBuilder: FormBuilder) {
+  this.buildSearchCityForm();            
+  }
 
   ngOnInit() {
     this.errorSub = this.postsService.error.subscribe(errorMessage => {
@@ -40,6 +46,14 @@ export class AppComponent implements OnInit, OnDestroy {
         this.error = error.message;
       }
     );
+  }
+
+  buildSearchCityForm() {
+    this.playerForm = this.formBuilder.group({
+      team: this.formBuilder.control(null, [Validators.required, Validators.pattern('^(?=[a-zA-Z])([A-Za-z]*)+$')]),
+      name: this.formBuilder.control(null, [Validators.required, Validators.pattern('^(?=[a-zA-Z ])([A-Za-z ]*)+$')]),
+      content: this.formBuilder.control(null, [Validators.required, Validators.pattern('^(?=[a-zA-Z ])([A-Za-z ]*)+$')]),
+    });
   }
 
   onCreatePost(postData: Post) {
