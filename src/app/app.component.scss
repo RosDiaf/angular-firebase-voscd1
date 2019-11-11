@@ -1,11 +1,29 @@
 
-.container {
+.atlanta-hawks {
   background-color: #e21a37;
   background: linear-gradient(to bottom, #e21a37 0%, #e21a37 38%, transparent 100%) no-repeat,#0b1a36;
 }
+
 .top {
   background-color: #e21a37;
+  .city-name {
+    font-size: 2em;
+    line-height: 100%;
+    color: #ffffff;
+    font-weight: bold;
+    margin:0;
+    padding: 0;
+  }
+  .team-name {
+    font-size: 3.5em;
+    line-height: 100%;
+    color: #ffffff;
+    font-weight: bold;
+    margin:0;
+    padding: 0;
+  }
 }
+
 .container .wrapper {
   content: "";
   background: url(https://www.nba.com/assets/logos/teams/primary/web/ATL.svg) center center/100% no-repeat;
