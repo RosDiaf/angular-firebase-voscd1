@@ -1,9 +1,4 @@
 
-.atlanta-hawks {
-  background-color: #e21a37;
-  background: linear-gradient(to bottom, #e21a37 0%, #e21a37 38%, transparent 100%) no-repeat,#0b1a36;
-}
-
 .top {
   background-color: #e21a37;
   .city-name {
@@ -23,24 +18,40 @@
     padding: 0;
   }
 }
+.atlanta-hawks {
+  background-color: #e21a37;
+  background: linear-gradient(to bottom, #e21a37 0%, #e21a37 38%, transparent 100%) no-repeat,#0b1a36;
 
-.container .wrapper {
-  content: "";
-  background: url(https://www.nba.com/assets/logos/teams/primary/web/ATL.svg) center center/100% no-repeat;
-  opacity: 0.2;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: 0;
+  .teamContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+  }
 }
-.team-logo {
-  background-image: url(https://www.nba.com/assets/logos/teams/primary/web/ATL.svg);
+
+
+
+.container {
+  .wrapper {
+    content: "";
+    background: url(https://www.nba.com/assets/logos/teams/primary/web/ATL.svg) center center/100% no-repeat;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+  }
 }
-select option {
-  margin-right: 15px;
-  max-width: 30px;
-  max-height: 60px;
-  width: 100%;
-}
+// .team-logo {
+//   background-image: url(https://www.nba.com/assets/logos/teams/primary/web/ATL.svg);
+// }
+// select option {
+//   margin-right: 15px;
+//   max-width: 30px;
+//   max-height: 60px;
+//   width: 100%;
+// }
