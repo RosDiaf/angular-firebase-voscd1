@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="teamContainer">
-        <img src="{{ constants.TEAM_URL + constants.TEAM[0].logo }}" alt="" />
+        <img src="{{ constants.TEAM_URL + logo }}.svg" alt="" />
         <div>
           <p class="city-name">Atlanta</p>
           <p class="team-name">Hawks</p>
@@ -24,10 +24,11 @@
             class="form-control"
             id="team"
             [ngClass]="{ 'is-invalid': submitted && playerForm.team.errors }"
+            (change)="setLogo($event)"
           >
             <option
               [ngStyle]="{'background-image': 'url(' + constants.TEAM_URL + item.logo + ')'}"
-              value={{item.name}} *ngFor="let item of constants.TEAM; let i = index">
+              value={{item.initials}} *ngFor="let item of constants.TEAM; let i = index">
               {{ item.name }}
             </option>
           </select>

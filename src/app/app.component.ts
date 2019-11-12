@@ -26,6 +26,8 @@ export class AppComponent implements OnInit, OnDestroy {
   error = null;
   private errorSub: Subscription;
 
+  logo: string;
+
   constructor(private http: HttpClient,
               private postsService: PostsService,
               private formBuilder: FormBuilder) {
@@ -62,6 +64,11 @@ export class AppComponent implements OnInit, OnDestroy {
   onCreatePost(postData: Post) {
     // Send Http request
     this.postsService.createAndStorePost(postData.team, postData.name, postData.content);
+  }
+
+  setLogo(event) {
+    console.log()
+    this.logo = event.target.value
   }
 
   onFetchPosts() {

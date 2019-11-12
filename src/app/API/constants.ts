@@ -4,19 +4,19 @@ export const constants = {
   TEAM: [
     {
       name: 'Atlanta Hawks',
-      logo: 'ATL.svg'
+      initials: 'ATL'
     },
     {
       name: 'Boston Celtics',
-      logo: 'BOS.svg'
+      initials: 'BOS'
     },
     {
       name: 'Brooklyn Nets',
-      logo: 'BKN.svg'
+      initials: 'BKN'
     },
     {
       name: 'Charlotte Hornets',
-      logo: 'CHA.svg'
+      initials: 'CHA'
     }
   ]
 }
