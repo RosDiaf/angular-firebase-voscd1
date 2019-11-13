@@ -20,3 +20,9 @@ export const constants = {
     }
   ]
 }
+
+export const myStyles = {
+'background-color': 'lime',
+'font-size': '20px',
+'font-weight': 'bold'
+}

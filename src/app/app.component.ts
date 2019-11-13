@@ -28,10 +28,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   logo: string;
 
-  constructor(private http: HttpClient,
-              private postsService: PostsService,
-              private formBuilder: FormBuilder) {
-  this.buildSearchCityForm();            
+  constructor(
+  private http: HttpClient,
+  private postsService: PostsService,
+  private formBuilder: FormBuilder) {
+
+  this.buildSearchCityForm();
+    
   }
 
   ngOnInit() {
