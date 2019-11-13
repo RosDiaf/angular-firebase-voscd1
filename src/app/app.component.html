@@ -1,4 +1,4 @@
-<div class="container top" [ngClass]="logo">
+<div class="container-fluid top" [ngClass]="logo">
   <div class="row">
     <div class="col-lg-12">
       <div class="teamContainer">
@@ -38,7 +38,9 @@
           >
             <option
               [ngStyle]="{'background-image': 'url(' + constants.TEAM_URL + item.logo + ')'}"
-              value={{item.initials}} *ngFor="let item of constants.TEAM; let i = index">
+              *ngFor="let item of constants.TEAM; let i = index"
+              value={{item.initials}}
+              data.team="{{item.name}}">
               {{ item.name }}
             </option>
           </select>

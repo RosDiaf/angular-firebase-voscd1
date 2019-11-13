@@ -27,6 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private errorSub: Subscription;
 
   logo: string;
+  team: Array<string>;
 
   constructor(
   private http: HttpClient,
@@ -70,8 +71,10 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   setLogo(event) {
-    console.log()
     this.logo = event.target.value
+    // this.team = event.target.dataset.team.split(" ")
+    // console.log(event.target.getAttribute('team'))
+    console.log(event.target.dataset.team)
   }
 
   onFetchPosts() {
