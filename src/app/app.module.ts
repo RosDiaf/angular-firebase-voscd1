@@ -5,11 +5,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { BackgroundComponent } from './Background/background.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent ],
+  declarations: [ AppComponent, BackgroundComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -75,7 +75,6 @@ export class AppComponent implements OnInit, OnDestroy {
     const selectEl = event.target;
     this.team = selectEl.options[selectEl.selectedIndex].getAttribute('data-team');
     this.team = this.team.split(" ")
-    console.log(this.team)
   }
 
   onFetchPosts() {

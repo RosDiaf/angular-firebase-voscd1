@@ -13,7 +13,8 @@
     </div>
   </div>
   <div class="row">
-    <div *ngIf="logo" class="wrapper">
+    <div *ngIf="logo">
+      <background team_url="constants.TEAM_URL" logo="logo"></background>
       <div [ngStyle]="{'background': 'url(' + constants.TEAM_URL + logo + '.svg) center center/100% no-repeat',
           'opacity': '0.2',
           'top': '0',
