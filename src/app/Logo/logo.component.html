@@ -1,0 +1,9 @@
+<div class="teamContainer">
+  <img src="{{ team_url + logo }}.svg" alt="" />
+  <div>
+    <p *ngFor="let item of teams; let i = index" 
+      [ngClass]="{'city-name': i === 0, 'team-name': i >= 1}">
+      {{ item }}
+    </p>
+  </div>
+</div>

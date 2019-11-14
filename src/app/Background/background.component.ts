@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'background',
   templateUrl: './background.component.html',
-  styles: [`h1 { font-family: Lato; }`]
+  styles: [``]
 })
 export class BackgroundComponent  {
   @Input() team_url: string;

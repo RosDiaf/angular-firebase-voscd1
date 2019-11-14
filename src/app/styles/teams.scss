@@ -1,13 +1,5 @@
 @import './variables';
 
-.teamContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
-}
-
 .ATL {
   background-color: $atlanta-hawks-bgColor;
   background: linear-gradient(

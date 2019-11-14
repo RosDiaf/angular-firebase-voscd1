@@ -1,7 +1,11 @@
 <div class="container-fluid top" [ngClass]="logo">
   <div class="row">
     <div class="col-lg-4">
-      <div class="teamContainer">
+      <logo
+        [teams]="team"
+        [team_url]="constants.TEAM_URL"
+        [logo]="logo"></logo>
+      <!-- <div class="teamContainer">
         <img src="{{ constants.TEAM_URL + logo }}.svg" alt="" />
         <div>
           <p *ngFor="let item of team; let i = index" 
@@ -9,21 +13,12 @@
             {{ item }}
           </p>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="row">
     <div *ngIf="logo">
-      <background team_url="constants.TEAM_URL" logo="logo"></background>
-      <div [ngStyle]="{'background': 'url(' + constants.TEAM_URL + logo + '.svg) center center/100% no-repeat',
-          'opacity': '0.2',
-          'top': '0',
-          'left': '0',
-          'bottom': '0',
-          'right': '0',
-          'position': 'absolute',
-          'z-index': '0'
-          }"></div>
+      <background [team_url]="constants.TEAM_URL" [logo]="logo"></background>
     </div>
   </div>
   <div class="row">
