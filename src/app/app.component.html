@@ -1,10 +1,11 @@
 <div class="container-fluid top" [ngClass]="logo">
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-4">
       <div class="teamContainer">
         <img src="{{ constants.TEAM_URL + logo }}.svg" alt="" />
         <div>
-          <p *ngFor="let item of team; let i = index" [ngClass]="{'city-name': i === 0, 'team-name': i === 1}">
+          <p *ngFor="let item of team; let i = index" 
+            [ngClass]="{'city-name': i === 0, 'team-name': i >= 1}">
             {{ item }}
           </p>
         </div>
