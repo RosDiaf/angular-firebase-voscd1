@@ -1,131 +1,102 @@
 @import './variables';
 
+@mixin box-emboss($bgColor, $gradient1, $gradient2, $gradient3) {
+  background-color: $bgColor;
+  background: linear-gradient(to bottom, $gradient1 0%, $gradient2 38%, transparent 100%) 
+  no-repeat,$gradient3;
+}
+
 .ATL {
-  background-color: $atlanta-hawks-bgColor;
-  background: linear-gradient(
-    to bottom, 
-    $atlanta-hawks-gradient-1 0%,
-    $atlanta-hawks-gradient-2 38%,
-    transparent 100%) 
-  no-repeat,$atlanta-hawks-gradient-3;
+  @include box-emboss($atlanta-hawks-bgColor, $atlanta-hawks-gradient-1, $atlanta-hawks-gradient-2, $atlanta-hawks-gradient-3);
 }
 
 .BOS {
-  background-color: #00611b;
-  background: linear-gradient(to bottom, #00611b 0%, #00611b 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($boston-celtics-bgColor, $boston-celtics-gradient-1, $boston-celtics-gradient-2, $boston-celtics-gradient-3);
 }
 
 .BKN {
-  background-color: #000;
-  background: linear-gradient(to bottom, #000 0%, #000 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($brooklyn-nets-bgColor, $brooklyn-nets-gradient-1, $brooklyn-nets-gradient-2, $brooklyn-nets-gradient-3);
 }
 
 .CHA {
-  background-color: #00848e;
-  background: linear-gradient(to bottom, #00848e 0%, #00848e 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($charlotte-hornets-bgColor, $charlotte-hornets-gradient-1, $charlotte-hornets-gradient-2, $charlotte-hornets-gradient-3);
 }
 
 .CHI {
-  background-color: #b00203;
-  background: linear-gradient(to bottom, #b00203 0%, #b00203 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($chicago-bulls-bgColor, $chicago-bulls-gradient-1, $chicago-bulls-gradient-2, $chicago-bulls-gradient-3);
 }
 .CLE {
-  background-color: #860038;
-  background: linear-gradient(to bottom, #860038 0%, #860038 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($cleveland-cavaliers-bgColor, $cleveland-cavaliers-gradient-1, $cleveland-cavaliers-gradient-2, $cleveland-cavaliers-gradient-3);
 }
 .DAL {
-  background-color: #006bb6;
-  background: linear-gradient(to bottom, #006bb6 0%, #006bb6 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($dallas-mavericks-bgColor, $dallas-mavericks-gradient-1, $dallas-mavericks-gradient-2, $dallas-mavericks-gradient-3);
 }
 .DEN {
-  background-color: #feb927;
-  background: linear-gradient(to bottom, #feb927 0%, #feb927 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($denver-nuggets-bgColor, $denver-nuggets-gradient-1, $denver-nuggets-gradient-2, $denver-nuggets-gradient-3);
 }
 .DET {
-  background-color: #fa002c;
-  background: linear-gradient(to bottom, #fa002c 0%, #fa002c 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($detroit-pistons-bgColor, $detroit-pistons-gradient-1, $detroit-pistons-gradient-2, $detroit-pistons-gradient-3);
 }
 .GSW {
-  background-color: #039;
-  background: linear-gradient(to bottom, #039 0%, #039 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($golden-state-warriors-bgColor, $golden-state-warriors-gradient-1, $golden-state-warriors-gradient-2, $golden-state-warriors-gradient-3);
 }
 .HOU {
-  background-color: #cd212b;
-  background: linear-gradient(to bottom, #cd212b 0%, #cd212b 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($houston-rockets-bgColor, $houston-rockets-gradient-1, $houston-rockets-gradient-2, $houston-rockets-gradient-3);
 }
 .IND {
-  background-color: #ffb517;
-  background: linear-gradient(to bottom, #ffb517 0%, #ffb517 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($indiana-pacers-bgColor, $indiana-pacers-gradient-1, $indiana-pacers-gradient-2, $indiana-pacers-gradient-3);
 }
 .LAC {
-  background-color: #ed174b;
-  background: linear-gradient(to bottom, #ed174b 0%, #ed174b 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($la-clippers-bgColor, $la-clippers-gradient-1, $la-clippers-gradient-2, $la-clippers-gradient-3);
 }
 .LAL {
-  background-color: #fdba33;
-  background: linear-gradient(to bottom, #fdba33 0%, #fdba33 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($los-angeles-lakers-bgColor, $los-angeles-lakers-gradient-1, $los-angeles-lakers-gradient-2, $los-angeles-lakers-gradient-3);
 }
 .MEM {
-  background-color: #5d76a9;
-  background: linear-gradient(to bottom, #5d76a9 0%, #5d76a9 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($memphis-grizzlies-bgColor, $memphis-grizzlies-gradient-1, $memphis-grizzlies-gradient-2, $memphis-grizzlies-gradient-3);
 }
 .MIA {
-  background-color: #98002e;
-  background: linear-gradient(to bottom, #98002e 0%, #98002e 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($miami-heat-bgColor, $miami-heat-gradient-1, $miami-heat-gradient-2, $miami-heat-gradient-3);
 }
 .MIL {
-  background-color: #00471b;
-  background: linear-gradient(to bottom, #00471b 0%, #00471b 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($milwaukee-bucks-bgColor, $milwaukee-bucks-gradient-1, $milwaukee-bucks-gradient-2, $milwaukee-bucks-gradient-3);
 }
-.MIN {
-  background-color: #2b6291;
-  background: linear-gradient(to bottom, #2b6291 0%, #2b6291 38%, transparent 100%) no-repeat,#0b1a36;
+.MIN {  
+  @include box-emboss($minnesota-timberwolves-bgColor, $minnesota-timberwolves-gradient-1, $minnesota-timberwolves-gradient-2, $minnesota-timberwolves-gradient-3);
 }
 .NOP {
-  background-color: #0c2340;
-  background: linear-gradient(to bottom, #0c2340 0%, #0c2340 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($new-orleans-pelicans-bgColor, $new-orleans-pelicans-gradient-1, $new-orleans-pelicans-gradient-2, $new-orleans-pelicans-gradient-3);
 }
 .NYK {
-  background-color: #f58426;
-  background: linear-gradient(to bottom, #f58426 0%, #f58426 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($new-york-knicks-bgColor, $new-york-knicks-gradient-1, $new-york-knicks-gradient-2, $new-york-knicks-gradient-3);
 }
 .OKC {
-  background-color: #002d62;
-  background: linear-gradient(to bottom, #002d62 0%, #002d62 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($oklahoma-city-thunder-bgColor, $oklahoma-city-thunder-gradient-1, $oklahoma-city-thunder-gradient-2, $oklahoma-city-thunder-gradient-3);
 }
 .ORL {
-  background-color: #0077c0;
-  background: linear-gradient(to bottom, #0077c0 0%, #0077c0 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($orlando-magic-bgColor, $orlando-magic-gradient-1, $orlando-magic-gradient-2, $orlando-magic-gradient-3);
 }
 .PHI {
-  background-color: #ef0022;
-  background: linear-gradient(to bottom, #ef0022 0%, #ef0022 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($philadelphia-76ers-bgColor, $philadelphia-76ers-gradient-1, $philadelphia-76ers-gradient-2, $philadelphia-76ers-gradient-3);
 }
 .PHX {
-  background-color: #e76221;
-  background: linear-gradient(to bottom, #e76221 0%, #e76221 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($phoenix-suns-bgColor, $phoenix-suns-gradient-1, $phoenix-suns-gradient-2, $phoenix-suns-gradient-3);
 }
 .POR {
-  background-color: #c00;
-  background: linear-gradient(to bottom, #c00 0%, #c00 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($portland-trail-blazers-bgColor, $portland-trail-blazers-gradient-1, $portland-trail-blazers-gradient-2, $portland-trail-blazers-gradient-3);
 }
 .SAC {
-  background-color: #51388a;
-  background: linear-gradient(to bottom, #51388a 0%, #51388a 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($sacramento-kings-bgColor, $sacramento-kings-gradient-1, $sacramento-kings-gradient-2, $sacramento-kings-gradient-3);
 }
 .SAS {
-  background-color: #959191;
-  background: linear-gradient(to bottom, #959191 0%, #959191 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($san-antonio-spurs-bgColor, $san-antonio-spurs-gradient-1, $san-antonio-spurs-gradient-2, $san-antonio-spurs-gradient-3);
 }
 .TOR {
-  background-color: #bd1b21;
-  background: linear-gradient(to bottom, #bd1b21 0%, #bd1b21 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($toronto-raptors-bgColor, $toronto-raptors-gradient-1, $toronto-raptors-gradient-2, $toronto-raptors-gradient-3);
 }
 .UTA {
-  background-color: #f9a11e;
-  background: linear-gradient(to bottom, #f9a11e 0%, #f9a11e 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($utah-jazz-bgColor, $utah-jazz-gradient-1, $utah-jazz-gradient-2, $utah-jazz-gradient-3);
 }
 .WAS {
-  background-color: #cf142b;
-  background: linear-gradient(to bottom, #cf142b 0%, #cf142b 38%, transparent 100%) no-repeat,#0b1a36;
+  @include box-emboss($washington-wizards-bgColor, $washington-wizards-gradient-1, $washington-wizards-gradient-2, $washington-wizards-gradient-3);
 }
