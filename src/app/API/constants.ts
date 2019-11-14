@@ -17,12 +17,110 @@ export const constants = {
     {
       name: 'Charlotte Hornets',
       initials: 'CHA'
+    },
+    {
+      name: 'Chicago Bulls',
+      initials: 'CHI'
+    },
+    {
+      name: 'Cleveland Cavaliers',
+      initials: 'CLE'
+    },
+    {
+      name: 'Dallas Mavericks',
+      initials: 'DAL'
+    },
+    {
+      name: 'Denver Nuggets',
+      initials: 'DEN'
+    },
+    {
+      name: 'Detroit Pistons',
+      initials: 'DET'
+    },
+    {
+      name: 'Golden State Warriors',
+      initials: 'GSW'
+    },
+    {
+      name: 'Houston Rockets',
+      initials: 'HOU'
+    },
+    {
+      name: 'Indiana Pacers',
+      initials: 'IND'
+    },
+    {
+      name: 'LA Clippers',
+      initials: 'LAC'
+    },
+    {
+      name: 'Los Angeles Lakers',
+      initials: 'LAL'
+    },
+    {
+      name: 'Memphis Grizzlies',
+      initials: 'MEM'
+    },
+    {
+      name: 'Miami Heat',
+      initials: 'MIA'
+    },
+    {
+      name: 'Milwaukee Bucks',
+      initials: 'MIL'
+    },
+    {
+      name: 'Minnesota Timberwolves',
+      initials: 'MIN'
+    },
+    {
+      name: 'New Orleans Pelicans',
+      initials: 'NOP'
+    },
+    {
+      name: 'New York Knicks',
+      initials: 'NYK'
+    },
+    {
+      name: 'Oklahoma City Thunder',
+      initials: 'OKC'
+    },
+    {
+      name: 'Orlando Magic',
+      initials: 'ORL'
+    },
+    {
+      name: 'Philadelphia 76ers',
+      initials: 'PHI'
+    },
+    {
+      name: 'Phoenix Suns',
+      initials: 'PHX'
+    },
+    {
+      name: 'Portland Trail Blazers',
+      initials: 'POR'
+    },
+    {
+      name: 'Sacramento Kings',
+      initials: 'SAC'
+    },
+    {
+      name: 'San Antonio Spurs',
+      initials: 'SAS'
+    },
+    {
+      name: 'Toronto Raptors',
+      initials: 'TOR'
+    },
+    {
+      name: 'Utah Jazz',
+      initials: 'UTA'
+    },
+    {
+      name: 'Washington Wizards',
+      initials: 'WAS'
     }
   ]
-}
-
-export const myStyles = {
-'background-color': 'lime',
-'font-size': '20px',
-'font-weight': 'bold'
 }

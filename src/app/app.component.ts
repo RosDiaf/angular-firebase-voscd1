@@ -72,9 +72,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   setLogo(event) {
     this.logo = event.target.value
-    // this.team = event.target.dataset.team.split(" ")
-    // console.log(event.target.getAttribute('team'))
-    console.log(event.target.dataset.team)
+    const selectEl = event.target;
+    this.team = selectEl.options[selectEl.selectedIndex].getAttribute('data-team');
+    this.team = this.team.split(" ")
+    console.log(this.team)
   }
 
   onFetchPosts() {
