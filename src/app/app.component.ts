@@ -28,6 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   logo: string;
   team: Array<string>;
+  heights:Array<number> = [];
 
   constructor(
   private http: HttpClient,
@@ -35,7 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private formBuilder: FormBuilder) {
 
   this.buildSearchCityForm();
-    
+  this.heights = Array.from({length:80},(v,k)=>k+1);
   }
 
   ngOnInit() {
@@ -61,13 +62,13 @@ export class AppComponent implements OnInit, OnDestroy {
     this.playerForm = this.formBuilder.group({
       team: this.formBuilder.control(null, [Validators.required, Validators.pattern('^(?=[a-zA-Z ])([A-Za-z ]*)+$')]),
       name: this.formBuilder.control(null, [Validators.required, Validators.pattern('^(?=[a-zA-Z ])([A-Za-z ]*)+$')]),
-      content: this.formBuilder.control(null, [Validators.required, Validators.pattern('^(?=[a-zA-Z ])([A-Za-z ]*)+$')]),
+      height: this.formBuilder.control(null, [Validators.required]),
     });
   }
 
   onCreatePost(postData: Post) {
     // Send Http request
-    this.postsService.createAndStorePost(postData.team, postData.name, postData.content);
+    this.postsService.createAndStorePost(postData.team, postData.name, postData.height);
   }
 
   setLogo(event) {

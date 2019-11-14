@@ -47,20 +47,16 @@
           />
           <div *ngIf="(!playerForm.controls['name'].valid && playerForm.controls['name'].touched)" class="error">Enter valid name</div>
         </div>
+
         <div class="form-group">
-          <label for="content">Content</label>
-          <textarea
-            formControlName="content"
-            class="form-control"
-            id="content"
-          ></textarea>
-          <div *ngIf="(!playerForm.controls['content'].valid && playerForm.controls['content'].touched)" class="error">Enter valid content</div>
+          <label for="height">Height</label>
+          <select formControlName="height" class="form-control" id="height">
+            <option value="{{ 149 + val }}" *ngFor="let val of heights">{{ 149 + val }}cm</option>
+          </select>
+          <div *ngIf="(!playerForm.controls['height'].valid && playerForm.controls['height'].touched)" class="error">Enter player height</div>
         </div>
-        <button
-          class="btn btn-primary"
-          type="submit"
-          [disabled]="!playerForm.valid"
-        >
+
+        <button class="btn btn-primary" type="submit" [disabled]="!playerForm.valid">
           Send Post
         </button>
       </form>
