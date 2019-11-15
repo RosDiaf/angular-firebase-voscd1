@@ -8,53 +8,70 @@
     </div>
   </div>
   <div class="row">
-    <div *ngIf="logo">
+    <div *ngIf="logo; else nbaLogoShow">
       <background [team_url]="constants.TEAM_URL" [logo]="logo"></background>
     </div>
+    <ng-template #nbaLogoShow>
+      <background [team_url]="constants.NBA_URL" [logo]="constants.NBA_LOGO"></background>
+    </ng-template>
   </div>
   <div class="row">
     <div class="col-xs-12 col-md-3 col-md-offset-3">
       <form (ngSubmit)="onCreatePost(playerForm.value)" [formGroup]="playerForm" name="playerForm">
-        <div class="form-group">
-          <label for="team">Team</label>
-          <select
-            formControlName="team"
-            type="text"
-            class="form-control"
-            id="team"
-            [ngClass]="{ 'is-invalid': submitted && playerForm.team.errors }"
-            (change)="setLogo($event)"
-          >
-            <option
-              id="{{i}}"
-              [ngStyle]="{'background-image': 'url(' + constants.TEAM_URL + item.logo + ')'}"
-              *ngFor="let item of constants.TEAM; let i = index"
-              value={{item.initials}}
-              [attr.data-team]="item.name">
-              {{ item.name }}
-            </option>
-          </select>
-          <div *ngIf="(!playerForm.controls['team'].valid && playerForm.controls['team'].touched)" class="error">Enter valid city</div>
+        <h1>Rosters</h1>
+        <!-- FIELD : TEAM -->
+        <div class="form-group row">
+          <label for="team" class="col-sm-2 col-form-label">Team</label>
+          <div class="col-sm-10">
+            <select
+              formControlName="team"
+              type="text"
+              class="form-control"
+              id="team"
+              [ngClass]="{ 'is-invalid': submitted && playerForm.team.errors }"
+              (change)="setLogo($event)"
+            >
+              <option
+                id="{{i}}"
+                [ngStyle]="{'background-image': 'url(' + constants.TEAM_URL + item.logo + ')'}"
+                *ngFor="let item of constants.TEAM; let i = index"
+                value={{item.initials}}
+                [attr.data-team]="item.name">
+                {{ item.name }}
+              </option>
+            </select>
+            <div *ngIf="(!playerForm.controls['team'].valid && playerForm.controls['team'].touched)" class="error">Enter valid city</div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input
-            formControlName="name"
-            type="text"
-            class="form-control"
-            id="name"
-            [ngClass]="{ 'is-invalid': submitted && playerForm.name.errors }"
-          />
-          <div *ngIf="(!playerForm.controls['name'].valid && playerForm.controls['name'].touched)" class="error">Enter valid name</div>
-        </div>
+        <!-- END -->
 
-        <div class="form-group">
-          <label for="height">Height</label>
-          <select formControlName="height" class="form-control" id="height">
-            <option value="{{ 149 + val }}" *ngFor="let val of heights">{{ 149 + val }}cm</option>
-          </select>
-          <div *ngIf="(!playerForm.controls['height'].valid && playerForm.controls['height'].touched)" class="error">Enter player height</div>
+        <!-- FIELD : PLAYER NAME -->
+        <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input
+              formControlName="name"
+              type="text"
+              class="form-control"
+              id="name"
+              [ngClass]="{ 'is-invalid': submitted && playerForm.name.errors }"
+            />
+            <div *ngIf="(!playerForm.controls['name'].valid && playerForm.controls['name'].touched)" class="error">Enter valid name</div>
+          </div>
         </div>
+        <!-- END -->
+
+        <!-- FIELD : PLAYER HEIGHT -->
+        <div class="form-group row">
+          <label for="height" class="col-sm-2 col-form-label">Height</label>
+          <div class="col-sm-10">
+              <select formControlName="height" class="form-control" id="height">
+                <option value="{{ 149 + val }}" *ngFor="let val of heights">{{ 149 + val }}cm</option>
+              </select>
+              <div *ngIf="(!playerForm.controls['height'].valid && playerForm.controls['height'].touched)" class="error">Enter player height</div>
+          </div>
+        </div>
+        <!-- END -->
 
         <button class="btn btn-primary" type="submit" [disabled]="!playerForm.valid">
           Send Post

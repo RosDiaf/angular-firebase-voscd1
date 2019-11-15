@@ -1,6 +1,8 @@
 export const constants = {
   FIREBASE_URL: 'https://my-api-project-ed058.firebaseio.com/posts.json',
   TEAM_URL: 'https://www.nba.com/assets/logos/teams/primary/web/',
+  NBA_URL: 'https://www.nba.com/themes/custom/league/assets/images/global-navigation/',
+  NBA_LOGO: 'nav_logoman',
   TEAM: [
     {
       name: 'Atlanta Hawks',
