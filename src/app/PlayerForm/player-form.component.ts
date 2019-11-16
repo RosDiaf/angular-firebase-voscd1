@@ -6,11 +6,12 @@ import { Post } from '../Models/post.model';
 @Component({
   selector: 'player-form',
   templateUrl: './player-form.component.html',
-  styleUrls: [`./player-form.component.scss`]
+  styleUrls: ['./player-form.component.scss']
 })
 export class PlayerFormComponent {
 
   heights:Array<number> = [];
+  weights:Array<number> = [];
   constants: Object = constants;
   playerForm: FormGroup;
 
@@ -20,6 +21,7 @@ export class PlayerFormComponent {
   constructor(private formBuilder: FormBuilder) {
     this.buildSearchCityForm();
     this.heights = Array.from({length:80},(v,k)=>k+1);
+    this.weights = Array.from({length:122},(v,k)=>k+1);
   }
 
   buildSearchCityForm() {
@@ -27,6 +29,7 @@ export class PlayerFormComponent {
       team: this.formBuilder.control(null, [Validators.required, Validators.pattern('^(?=[a-zA-Z ])([A-Za-z ]*)+$')]),
       name: this.formBuilder.control(null, [Validators.required, Validators.pattern('^(?=[a-zA-Z ])([A-Za-z ]*)+$')]),
       height: this.formBuilder.control(null, [Validators.required]),
+      weight: this.formBuilder.control(null, [Validators.required]),
     });
   }
 

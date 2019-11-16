@@ -1,6 +1,7 @@
 export interface Post {
   team: string;
   name: string;
-  content: string;
+  height: number;
+  weight: number;
   id?: string;
 }

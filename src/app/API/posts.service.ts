@@ -17,8 +17,8 @@ export class PostsService {
 
   constructor(private http: HttpClient) {}
 
-  createAndStorePost(team: string, name: string, height: number) {
-    const postData: Post = { team: team, name: name, height: height };
+  createAndStorePost(team: string, name: string, height: number, weight: number) {
+    const postData: Post = { team: team, name: name, height: height, weight: weight };
     this.http
       .post<{ name: string }>(
         constants.FIREBASE_URL,

@@ -6,8 +6,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BackgroundComponent } from './Background/background.component';
+import { PlayerContainer } from './PlayerContainer/player-container.component';
 import { PlayerFormComponent } from './PlayerForm/player-form.component';
 import { LogoComponent } from './Logo/logo.component';
+import { NavBar } from './NavBar/navbar.component';
 import { PostComponent } from './Post/post.component';
 
 @NgModule({
@@ -16,7 +18,9 @@ import { PostComponent } from './Post/post.component';
     AppComponent,
     BackgroundComponent,
     LogoComponent,
+    NavBar,
     PostComponent,
+    PlayerContainer,
     PlayerFormComponent ],
   bootstrap:    [ AppComponent ]
 })
