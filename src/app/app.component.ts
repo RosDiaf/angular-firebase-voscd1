@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 import { HttpClient } from '@angular/common/http';
@@ -19,10 +18,7 @@ import { constants } from './API/constants'
 export class AppComponent implements OnInit, OnDestroy {
   logo: string;
   team: Array<string>;
-
-  heights:Array<number> = [];
   constants: Object = constants;
-  playerForm: FormGroup;
 
   loadedPosts: Post[] = [];
   isFetching = false;
@@ -30,13 +26,8 @@ export class AppComponent implements OnInit, OnDestroy {
   private errorSub: Subscription;
 
   constructor(
-  private http: HttpClient,
-  private postsService: PostsService,
-  private formBuilder: FormBuilder) {
-
-  this.buildSearchCityForm();
-  this.heights = Array.from({length:80},(v,k)=>k+1);
-  }
+    private http: HttpClient,
+    private postsService: PostsService) { }
 
   ngOnInit() {
     this.errorSub = this.postsService.error.subscribe(errorMessage => {
@@ -57,16 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
     );
   }
 
-  buildSearchCityForm() {
-    this.playerForm = this.formBuilder.group({
-      team: this.formBuilder.control(null, [Validators.required, Validators.pattern('^(?=[a-zA-Z ])([A-Za-z ]*)+$')]),
-      name: this.formBuilder.control(null, [Validators.required, Validators.pattern('^(?=[a-zA-Z ])([A-Za-z ]*)+$')]),
-      height: this.formBuilder.control(null, [Validators.required]),
-    });
-  }
-
   onCreatePost(postData: Post) {
-    // Send Http request
     this.postsService.createAndStorePost(postData.team, postData.name, postData.height);
   }
 
@@ -78,7 +60,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   onFetchPosts() {
-    // Send Http request
     this.isFetching = true;
     this.postsService.fetchPosts().subscribe(
       posts => {
@@ -94,7 +75,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   onClearPosts() {
-    // Send Http request
     this.postsService.deletePosts().subscribe(() => {
       this.loadedPosts = [];
     });
