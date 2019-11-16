@@ -39,7 +39,7 @@ export class PlayerContainer implements OnInit, OnDestroy {
       posts => {
         this.isFetching = false;
         this.loadedPosts = posts;
-        console.log(this.loadedPosts)
+        console.log('FETCH',this.loadedPosts)
       },
       error => {
         this.isFetching = false;

@@ -1,16 +1,23 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core'
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core'
 
 @Component({
   selector: 'post',
   templateUrl: './post.component.html',
-  styles: [``]
+  styleUrls: ['./post.component.scss']
 })
 
-export class PostComponent {
-  @Input() loadedPosts: string;
+export class PostComponent implements OnChanges  {
+  @Input() loadedPosts: Array<string>;
   @Input() isFetching: boolean;
   @Input() error: boolean;
   @Output() handleError = new EventEmitter();
+  dataKeys: Array<string> = []
+
+  constructor() {}
+
+  ngOnChanges() {
+    // const [ team, name, height, width ] = this.loadedPosts
+  }
 
   onHandleError() {
     this.handleError.emit()
