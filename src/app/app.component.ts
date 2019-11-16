@@ -17,18 +17,17 @@ import { constants } from './API/constants'
   styleUrls: [ './app.component.scss' ]
 })
 export class AppComponent implements OnInit, OnDestroy {
-  name = 'Angular';
+  logo: string;
+  team: Array<string>;
 
+  heights:Array<number> = [];
   constants: Object = constants;
   playerForm: FormGroup;
+
   loadedPosts: Post[] = [];
   isFetching = false;
   error = null;
   private errorSub: Subscription;
-
-  logo: string;
-  team: Array<string>;
-  heights:Array<number> = [];
 
   constructor(
   private http: HttpClient,
