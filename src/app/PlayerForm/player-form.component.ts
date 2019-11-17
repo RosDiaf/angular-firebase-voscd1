@@ -34,7 +34,6 @@ export class PlayerFormComponent {
   }
 
   onCreatePost(postData: Post) {
-    console.log(postData)
     this.createPost.emit(postData)
   }
 

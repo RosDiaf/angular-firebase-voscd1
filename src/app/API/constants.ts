@@ -124,5 +124,10 @@ export const constants = {
       name: 'Washington Wizards',
       initials: 'WAS'
     }
+  ],
+  ALERT: [
+    {
+      dataSaved: 'Player successfully entered!'
+    }
   ]
 }

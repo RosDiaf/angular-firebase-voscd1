@@ -5,6 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
+import { AlertComponent } from './Alert/alert.component';
 import { BackgroundComponent } from './Background/background.component';
 import { PlayerContainer } from './PlayerContainer/player-container.component';
 import { PlayerFormComponent } from './PlayerForm/player-form.component';
@@ -14,8 +15,9 @@ import { PostComponent } from './Post/post.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule ],
-  declarations: [ 
+  declarations: [
     AppComponent,
+    AlertComponent,
     BackgroundComponent,
     LogoComponent,
     NavBar,

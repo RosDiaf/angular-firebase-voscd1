@@ -18,6 +18,7 @@ export class PlayerContainer implements OnInit, OnDestroy {
 
   logo: string;
   team: Array<string>;
+  isSaved: boolean = false;
   constants: Object = constants;
 
   loadedPosts: Post[] = [];
@@ -53,7 +54,16 @@ export class PlayerContainer implements OnInit, OnDestroy {
       postData.team,
       postData.name,
       postData.height,
-      postData.weight);
+      postData.weight)
+      .subscribe(
+        responseData => {
+          console.log(responseData);
+          this.isSaved = true;
+        },
+        error => {
+          this.error.next(error.message);
+        }
+      );
   }
 
   setLogo(event) {
