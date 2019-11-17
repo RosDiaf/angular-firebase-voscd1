@@ -1,4 +1,7 @@
-<p *ngIf="loadedPosts.length < 1 && !isFetching">No posts available!</p>
+<!-- <p *ngIf="loadedPosts.length < 1 && !isFetching">{{constants.ALERT.noPostAvailable}}</p> -->
+<ng-container *ngIf="loadedPosts.length < 1 && !isFetching">
+  <alert [message]="constants.ALERT.noPostAvailable" [msgType]="'alert-warning'"></alert>
+</ng-container>
 <table class="table table-dark table-striped" *ngIf="loadedPosts.length >= 1 && !isFetching">
   <thead>
     <tr>

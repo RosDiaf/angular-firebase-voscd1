@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core'
+import { constants } from '../API/constants'
 
 @Component({
   selector: 'post',
@@ -7,6 +8,7 @@ import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core
 })
 
 export class PostComponent implements OnChanges  {
+  constants: Object = constants;
   @Input() loadedPosts: Array<string>;
   @Input() isFetching: boolean;
   @Input() error: boolean;

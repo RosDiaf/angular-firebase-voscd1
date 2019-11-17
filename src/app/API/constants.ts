@@ -125,9 +125,8 @@ export const constants = {
       initials: 'WAS'
     }
   ],
-  ALERT: [
-    {
-      dataSaved: 'Player successfully entered!'
-    }
-  ]
+  ALERT: {
+    dataSaved: 'Player successfully entered!',
+    noPostAvailable: 'No posts available!'
+  }
 }
