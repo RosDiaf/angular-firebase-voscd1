@@ -17,6 +17,7 @@ export class PlayerFormComponent {
 
   @Output() createPost = new EventEmitter();
   @Output() changeLogo = new EventEmitter();
+  @Output() onFocus = new EventEmitter();
 
   constructor(private formBuilder: FormBuilder) {
     this.buildSearchCityForm();

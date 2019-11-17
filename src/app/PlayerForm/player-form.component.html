@@ -45,10 +45,10 @@
   <div class="form-group row">
     <label for="height" class="col-sm-2 col-form-label">Height</label>
     <div class="col-sm-10">
-        <select formControlName="height" class="form-control" id="height">
-          <option value="{{ 149 + val }}" *ngFor="let val of heights">{{ 149 + val }}cm</option>
-        </select>
-        <div *ngIf="(!playerForm.controls['height'].valid && playerForm.controls['height'].touched)" class="error">Enter player height</div>
+      <select formControlName="height" class="form-control" id="height">
+        <option value="{{ 149 + val }}" *ngFor="let val of heights">{{ 149 + val }}cm</option>
+      </select>
+      <div *ngIf="(!playerForm.controls['height'].valid && playerForm.controls['height'].touched)" class="error">Enter player height</div>
     </div>
   </div>
   <!-- END -->
@@ -57,10 +57,10 @@
   <div class="form-group row">
     <label for="weight" class="col-sm-2 col-form-label">Weight</label>
     <div class="col-sm-10">
-        <select formControlName="weight" class="form-control" id="weight">
-          <option value="{{ 68 + val }}" *ngFor="let val of weights">{{ 68 + val }}Kg</option>
-        </select>
-        <div *ngIf="(!playerForm.controls['weight'].valid && playerForm.controls['weight'].touched)" class="error">Enter player weight</div>
+      <select formControlName="weight" class="form-control" id="weight">
+        <option value="{{ 68 + val }}" *ngFor="let val of weights">{{ 68 + val }}Kg</option>
+      </select>
+      <div *ngIf="(!playerForm.controls['weight'].valid && playerForm.controls['weight'].touched)" class="error">Enter player weight</div>
     </div>
   </div>
   <!-- END -->

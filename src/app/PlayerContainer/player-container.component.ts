@@ -40,7 +40,6 @@ export class PlayerContainer implements OnInit, OnDestroy {
       posts => {
         this.isFetching = false;
         this.loadedPosts = posts;
-        console.log('FETCH',this.loadedPosts)
       },
       error => {
         this.isFetching = false;
@@ -57,8 +56,10 @@ export class PlayerContainer implements OnInit, OnDestroy {
       postData.weight)
       .subscribe(
         responseData => {
-          console.log(responseData);
           this.isSaved = true;
+          setTimeout(() => {
+            this.isSaved = false;
+          }, 2000);
         },
         error => {
           this.error.next(error.message);
