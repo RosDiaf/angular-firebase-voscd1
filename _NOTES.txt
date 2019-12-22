@@ -3,3 +3,7 @@ https://www.nba.com/teams
 
 Example Validation
 https://stackblitz.com/edit/angular-6-reactive-form-validation?file=app%2Fapp.component.html
+
+
+Sign up with email / password
+https://firebase.google.com/docs/reference/rest/auth#section-create-email-password
