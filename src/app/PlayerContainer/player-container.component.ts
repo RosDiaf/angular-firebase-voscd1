@@ -81,6 +81,10 @@ export class PlayerContainer implements OnInit, OnDestroy {
       );
   }
 
+  savePosts() {
+    
+  }
+
   setLogo(event) {
     this.logo = event.target.value
     const selectEl = event.target;
