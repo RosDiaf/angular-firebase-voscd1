@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
-import { Post } from '../Models/post.model';
+import { Post, Player } from '../Models/post.model';
 import { PostsService } from '../API/posts.service';
 
 import { constants } from '../API/constants'
@@ -22,6 +22,7 @@ export class PlayerContainer implements OnInit, OnDestroy {
   constants: Object = constants;
 
   loadedPosts: Post[] = [];
+  newPlayer: Player = [];
   isFetching = false;
   error = null;
   private errorSub: Subscription;
@@ -49,6 +50,19 @@ export class PlayerContainer implements OnInit, OnDestroy {
   }
 
   onCreatePost(postData: Post) {
+
+    this.newPlayer.push(
+      new Player(
+        postData.team,
+        postData.name,
+        postData.height,
+        postData.weight,
+        Math.floor(Math.random()) 
+      )
+    )
+
+    console.log(this.newPlayer)
+
     this.postsService.createAndStorePost(
       postData.team,
       postData.name,
