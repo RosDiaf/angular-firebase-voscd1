@@ -5,7 +5,7 @@
 <table class="table table-dark table-striped" *ngIf="loadedPosts.length >= 1 && !isFetching">
   <thead>
     <tr>
-      <ng-container *ngFor="let post of loadedPosts[0][0] | keyvalue">
+      <ng-container *ngFor="let post of loadedPosts[0] | keyvalue">
         <th *ngIf="post.key !== 'id'">
           {{post.key}}
         </th>
@@ -13,12 +13,12 @@
     </tr>
   </thead>
   <tbody>
-    <ng-container *ngFor="let post of loadedPosts; let x = index">
+    <ng-container *ngFor="let post of loadedPosts; let i = index">
       <tr>
-        <td>{{ post[0].height }}cm</td>
-        <td>{{ post[0].name }}</td>
-        <td>{{ post[0].team }}</td>
-        <td>{{ post[0].weight }}kg</td>
+        <td>{{ post.height }}cm</td>
+        <td>{{ post.name }}</td>
+        <td>{{ post.team }}</td>
+        <td>{{ post.weight }}kg</td>
       </tr>
     </ng-container>
   </tbody>

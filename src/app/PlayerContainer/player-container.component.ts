@@ -6,7 +6,8 @@ import { Subscription } from 'rxjs';
 import { Post, Player } from '../Models/post.model';
 import { PostsService } from '../API/posts.service';
 
-import { constants } from '../API/constants'
+import { constants } from '../API/constants';
+import { getSingleObject } from '../Shared/getSingleObject';
 
 @Component({
   selector: 'player-container',
@@ -23,6 +24,7 @@ export class PlayerContainer implements OnInit, OnDestroy {
 
   loadedPosts: Post[] = [];
   newPlayer: Player[] = [];
+  postKeys: Array<string>;
   isFetching = false;
   error = null;
   private errorSub: Subscription;
@@ -40,7 +42,7 @@ export class PlayerContainer implements OnInit, OnDestroy {
     this.postsService.fetchPosts().subscribe(
       posts => {
         this.isFetching = false;
-        this.loadedPosts = posts;
+        this.loadedPosts = getSingleObject(posts)
       },
       error => {
         this.isFetching = false;
@@ -50,7 +52,6 @@ export class PlayerContainer implements OnInit, OnDestroy {
   }
 
   onCreatePost(postData: Post) {
-
     this.newPlayer.push(
       new Player(
         postData.team,
@@ -60,25 +61,6 @@ export class PlayerContainer implements OnInit, OnDestroy {
         Math.floor(Math.random())
       )
     )
-
-    console.log(this.newPlayer)
-
-    // this.postsService.createAndStorePost(
-    //   postData.team,
-    //   postData.name,
-    //   postData.height,
-    //   postData.weight)
-    //   .subscribe(
-    //     responseData => {
-    //       this.isSaved = true;
-    //       setTimeout(() => {
-    //         this.isSaved = false;
-    //       }, 2000);
-    //     },
-    //     error => {
-    //       this.error.next(error.message);
-    //     }
-    //   );
   }
 
   savePosts() {
@@ -88,6 +70,7 @@ export class PlayerContainer implements OnInit, OnDestroy {
           this.isSaved = true;
           setTimeout(() => {
             this.isSaved = false;
+            this.newPlayer.length = 0;
           }, 2000);
         },
         error => {
@@ -108,7 +91,7 @@ export class PlayerContainer implements OnInit, OnDestroy {
     this.postsService.fetchPosts().subscribe(
       posts => {
         this.isFetching = false;
-        this.loadedPosts = posts;
+        this.loadedPosts = getSingleObject(posts);
       },
       error => {
         this.isFetching = false;

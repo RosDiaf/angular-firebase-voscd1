@@ -36,6 +36,7 @@ export class PlayerFormComponent {
 
   onCreatePost(postData: Post) {
     this.createPost.emit(postData)
+    this.playerForm.reset()
   }
 
   setLogo(event) {
