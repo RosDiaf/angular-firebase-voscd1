@@ -3,7 +3,7 @@ export interface Post {
   name: string;
   height: number;
   weight: number;
-  id?: string;
+  id?: number;
 }
 
 export class Player {
@@ -11,9 +11,9 @@ export class Player {
   name: string;
   height: number;
   weight: number;
-  id: string;
+  id: number;
 
-  constructor(team: string, name: string, height: number, weight: number, id: string){
+  constructor(team: string, name: string, height: number, weight: number, id: number){
     this.team = team;
     this.name = name;
     this.height = height;

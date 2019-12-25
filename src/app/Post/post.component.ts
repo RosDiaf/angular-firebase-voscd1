@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core'
+import { Component, Input, Output, EventEmitter } from '@angular/core'
 import { constants } from '../API/constants'
 
 @Component({
@@ -7,7 +7,7 @@ import { constants } from '../API/constants'
   styleUrls: ['./post.component.scss']
 })
 
-export class PostComponent implements OnChanges  {
+export class PostComponent {
   constants: Object = constants;
   @Input() loadedPosts: Array<string>;
   @Input() isFetching: boolean;
@@ -16,10 +16,6 @@ export class PostComponent implements OnChanges  {
   dataKeys: Array<string> = []
 
   constructor() {}
-
-  ngOnChanges() {
-    // const [ team, name, height, width ] = this.loadedPosts
-  }
 
   onHandleError() {
     this.handleError.emit()

@@ -22,7 +22,7 @@ export class PlayerContainer implements OnInit, OnDestroy {
   constants: Object = constants;
 
   loadedPosts: Post[] = [];
-  newPlayer: Player = [];
+  newPlayer: Player[] = [];
   isFetching = false;
   error = null;
   private errorSub: Subscription;
@@ -57,17 +57,32 @@ export class PlayerContainer implements OnInit, OnDestroy {
         postData.name,
         postData.height,
         postData.weight,
-        Math.floor(Math.random()) 
+        Math.floor(Math.random())
       )
     )
 
     console.log(this.newPlayer)
 
-    this.postsService.createAndStorePost(
-      postData.team,
-      postData.name,
-      postData.height,
-      postData.weight)
+    // this.postsService.createAndStorePost(
+    //   postData.team,
+    //   postData.name,
+    //   postData.height,
+    //   postData.weight)
+    //   .subscribe(
+    //     responseData => {
+    //       this.isSaved = true;
+    //       setTimeout(() => {
+    //         this.isSaved = false;
+    //       }, 2000);
+    //     },
+    //     error => {
+    //       this.error.next(error.message);
+    //     }
+    //   );
+  }
+
+  savePosts() {
+    this.postsService.createAndStorePost(this.newPlayer)
       .subscribe(
         responseData => {
           this.isSaved = true;
@@ -79,10 +94,6 @@ export class PlayerContainer implements OnInit, OnDestroy {
           this.error.next(error.message);
         }
       );
-  }
-
-  savePosts() {
-    
   }
 
   setLogo(event) {

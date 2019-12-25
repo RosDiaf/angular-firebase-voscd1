@@ -17,8 +17,8 @@ export class PostsService {
 
   constructor(private http: HttpClient) {}
 
-  createAndStorePost(team: string, name: string, height: number, weight: number) {
-    const postData: Post = { team: team, name: name, height: height, weight: weight };
+  createAndStorePost(player: any) {
+    const postData: Post = player
     return this.http
       .post<{ name: string }>(
         constants.FIREBASE_URL,
@@ -27,14 +27,6 @@ export class PostsService {
           observe: 'response'
         }
       )
-      // .subscribe(
-      //   responseData => {
-      //     console.log(responseData);
-      //   },
-      //   error => {
-      //     this.error.next(error.message);
-      //   }
-      // );
   }
 
   fetchPosts() {
